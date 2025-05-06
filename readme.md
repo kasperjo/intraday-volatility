@@ -49,5 +49,10 @@ marimo edit --sandbox realized_risk/effective_time.py
 
 - Ensure the `data/` directory is populated with the required files before running the scripts.
 - Scripts are intended to be run using [Marimo](https://github.com/marimo-team/marimo), a reactive Python notebook environment.
+- If you want to hide the code and only run the output, replace `edit` with `run`, e.g.:
+
+  ```bash
+  marimo run --sandbox realized_risk/intraday.py
+  ```
 - For questions or issues, please open an issue in this repository or contact the maintainer.
 
