@@ -688,8 +688,9 @@ def _(min_var_iewma, min_var_realized, min_var_realized_iewma, mo, np, plt):
         risk = backtest.pnl.resample(freq).std() * np.sqrt(250)
         sharpe = mean / risk
 
+        sharpe = sharpe[1:]
         label = f"{label} (mean {sharpe.mean():.2f}, std {sharpe.std():.2f})"
-        sharpe[1:].plot(marker='o', label=label)
+        sharpe[:].plot(marker='o', label=label)
 
         return mean[:], risk[:], sharpe[:]
 
@@ -705,6 +706,12 @@ def _(min_var_iewma, min_var_realized, min_var_realized_iewma, mo, np, plt):
         plt.gcf()
     ], align="center")
     return dcc_risk, freqq, iewma_risk, realized_risk
+
+
+@app.cell
+def _(freqq, min_var_iewma):
+    min_var_iewma.pnl.notna().resample(freqq).sum()
+    return
 
 
 @app.cell
