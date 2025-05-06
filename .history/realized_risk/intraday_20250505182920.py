@@ -180,7 +180,7 @@ def _(acf_toggle, daily_acf, mo, plt):
 
 @app.cell
 def _(np, xr):
-    five_min_returns = xr.load_dataarray('data/returns_merged.nc')
+    five_min_returns = xr.load_dataarray('realized_risk/data/returns_merged.nc')
     five_min_log_returns = np.log(1 + five_min_returns)
     daily_log_returns = five_min_log_returns.sum(dim='Time')
     daily_returns = np.exp(daily_log_returns) - 1

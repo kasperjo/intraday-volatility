@@ -24,8 +24,8 @@ myenv/
 
 # Data is too large
 data/returns_merged.nc
-data/HF_Returns_Stocks.csv
-data/Intraday_Overnight_Stock_Returns.xlsx
+data/returns_merged.nc
+data/returns_merged.nc
 
 
 
