@@ -54,5 +54,4 @@ marimo edit --sandbox realized_risk/effective_time.py
   ```bash
   marimo run --sandbox realized_risk/intraday.py
   ```
-- For questions or issues, please open an issue in this repository or contact the maintainer.
 
