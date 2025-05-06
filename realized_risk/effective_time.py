@@ -1,10 +1,18 @@
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.10"
 # dependencies = [
+#     "arch==7.2.0",
+#     "cvxcovariance==0.1.5",
+#     "cvxpy==1.6.5",
 #     "marimo",
+#     "matplotlib==3.9.4",
+#     "mosek==11.0.19",
+#     "numpy==2.0.2",
+#     "pandas==2.2.3",
+#     "tqdm==4.67.1",
+#     "xarray==2025.4.0",
 # ]
 # ///
-
 
 import marimo
 
@@ -47,7 +55,7 @@ def _():
 
 @app.cell
 def _(xr):
-    five_min_returns = xr.load_dataarray('realized_risk/data/returns_merged.nc')
+    five_min_returns = xr.load_dataarray('data/returns_merged.nc')
 
     overnight = five_min_returns.sel(Time="09:35:00")
     intraday = (1+five_min_returns.sel(Time= five_min_returns.Time >= "09:40:00")).prod(dim="Time") - 1

@@ -123,11 +123,6 @@ def _daily_cov(returns, max_lag=None):
     # return (cov + cov.T) / 2
     return cov
 
-
-
-    
-
-
 RealizedEwma = namedtuple('RealizedEwma', ['date', 'covariance'])
 def realized_ewma(intra_day_returns, halflife, min_periods=1, DCC=False, **kwargs):
 
