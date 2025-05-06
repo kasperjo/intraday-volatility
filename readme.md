@@ -5,8 +5,12 @@ are instructions for running the various components of the project.
 
 
 To generate and clean the data, download the required datasets from
-[here](https://mpelger.people.stanford.edu/data-and-code). Once the data is
-downloa
+[here](https://drive.google.com/drive/folders/16RXMH26fZYagbe3pB0w_OZW2chRAhZLI?usp=sharing), and move them to the data folder. This data was downloaded from [Markus Pelger's website](https://mpelger.people.stanford.edu/data-and-code),
+and reformatted.
+
+
+
+Once the data is downloaded pip install marimo and pip install uv. Then run
 marimo edit --sandbox clean_data.py
 ```
 
