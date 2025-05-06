@@ -22,6 +22,8 @@
 *.vrb
 myenv/
 
+.history
+
 # Data is too large
 data/returns_merged.nc
 data/HF_Returns_Stocks.csv
