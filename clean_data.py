@@ -25,7 +25,7 @@ def _():
     import xarray as xr
     import datetime
     import matplotlib.pyplot as plt
-    return datetime, np, pd, plt, xr
+    return datetime, mo, np, pd, plt, xr
 
 
 @app.cell
@@ -76,6 +76,12 @@ def _(pd, xr):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""# Final xarray return array""")
+    return
+
+
+@app.cell
 def _(intraday, np, overnight, xr):
     ### Save actual returns (not log returns)
     returns = (np.exp(xr.concat(
@@ -86,6 +92,8 @@ def _(intraday, np, overnight, xr):
 
     ### XXX is it okay to remove this asset ??? there is one return of over -94% at 09:35 followed by 0% at 09:40, and 1300% at 09:45, which skews the volatility plot
     returns = returns.assign_coords(Time=returns["Time"].astype(str)).sel(Asset=returns["Asset"] != "XL")
+
+    # returns.to_netcdf("data/returns_merged.nc")
     return (returns,)
 
 
